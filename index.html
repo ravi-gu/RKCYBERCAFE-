@@ -4,46 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RK CYBER CAFE | रवि कुमार</title>
-    <link rel="icon" type="image/icon" href="logo.jfif">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --primary: #002d5b; --secondary: #25d366; --accent: #ffcc00; --light: #f8f9fa; }
-        body { font-family: 'Poppins', sans-serif; margin: 0; background: #eef2f7; color: #333; scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: #eef2f7; color: #333; text-align: center; }
         
-        /* Navigation & Logo Area */
         nav { background: white; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
         .logo-box { display: flex; align-items: center; gap: 10px; }
         .logo-box img { height: 50px; border-radius: 5px; }
         .logo-text { font-weight: bold; font-size: 1.4rem; color: var(--primary); }
 
-        /* Hero Banner Section */
-        .hero { position: relative; width: 100%; height: 350px; background: url('banner.jpg') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
+        .hero { position: relative; width: 100%; height: 300px; background: url('banner.png') no-repeat center center/cover; display: flex; align-items: center; justify-content: center; color: white; }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 45, 91, 0.6); }
         .hero-content { position: relative; z-index: 1; padding: 20px; }
-        .hero h2 { font-size: 2.5rem; margin-bottom: 10px; text-shadow: 2px 2px 5px rgba(0,0,0,0.5); }
 
-        .container { max-width: 1000px; margin: -50px auto 20px; padding: 20px; position: relative; z-index: 2; }
+        .container { max-width: 1000px; margin: -40px auto 20px; padding: 20px; position: relative; z-index: 2; }
 
-        /* Address Box */
-        .address-card { background: white; padding: 20px; border-radius: 15px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: left; }
-        .address-card div i { color: var(--primary); font-size: 1.5rem; margin-bottom: 10px; }
+        /* Booking Section */
+        .booking-section { background: #fff; padding: 30px; border-radius: 20px; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        input, textarea { width: 90%; padding: 15px; border-radius: 10px; border: 2px solid #ddd; font-size: 1rem; margin-bottom: 10px; text-align: center; display: block; margin: 0 auto 15px auto; outline: none; }
+        .ws-btn { background: var(--secondary); color: white; border: none; padding: 15px 30px; width: 90%; border-radius: 10px; font-size: 1.2rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0 auto; transition: 0.3s; }
+        .ws-btn:hover { background: #128c7e; }
 
-        /* Services Section */
-        .services { margin-top: 40px; text-align: center; }
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin-top: 20px; }
-        .service-item { background: white; padding: 20px; border-radius: 12px; border-bottom: 4px solid var(--primary); transition: 0.3s; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; margin-top: 30px; }
+        .service-item { background: white; padding: 25px; border-radius: 15px; border-bottom: 5px solid var(--primary); cursor: pointer; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .service-item:hover { transform: translateY(-10px); background: var(--primary); color: white; }
-        .service-item i { font-size: 2rem; margin-bottom: 10px; color: var(--accent); }
+        .service-item i { font-size: 2.5rem; margin-bottom: 15px; color: var(--accent); }
 
-        /* WhatsApp Form Area */
-        .contact-box { background: #075e54; color: white; padding: 30px; border-radius: 20px; margin-top: 40px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-        .form-group { margin-bottom: 15px; text-align: left; }
-        input, textarea { width: 100%; padding: 15px; border-radius: 10px; border: none; font-size: 1rem; margin-top: 5px; }
-        .btn-send { background: var(--secondary); color: white; border: none; padding: 15px; width: 100%; border-radius: 10px; font-size: 1.2rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 10px; }
-
-        footer { background: #111; color: #888; padding: 30px; margin-top: 50px; font-size: 0.9rem; }
-        
-        @media (max-width: 600px) { .hero { height: 250px; } .hero h2 { font-size: 1.8rem; } }
+        footer { background: #111; color: #888; padding: 30px; margin-top: 50px; }
     </style>
 </head>
 <body>
@@ -53,82 +41,79 @@
         <img src="logo.jfif" alt="RK Logo">
         <span class="logo-text">RK CYBER CAFE</span>
     </div>
-    <div><i class="fas fa-bars"></i></div>
 </nav>
 
 <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <h2>आपका अपना डिजिटल साथी</h2>
-        <p>तेज़ सेवा, सही समाधान - रवि कुमार</p>
+        <h1>रवि कुमार डिजिटल सेवा केंद्र</h1>
+        <p>तेज़, सुरक्षित और भरोसेमंद</p>
     </div>
 </section>
 
 <div class="container">
-    <div class="address-card">
-        <div>
-            <i class="fas fa-map-marker-alt"></i><br>
-            <strong>पता:</strong> जाखी बीघा, मणिनगर, डेहरी ऑन सोन, रोहतास (बिहार)
-        </div>
-        <div>
-            <i class="fas fa-user-tie"></i><br>
-            <strong>संचालक:</strong> रवि कुमार
-        </div>
-        <div>
-            <i class="fas fa-phone-alt"></i><br>
-            <strong>संपर्क:</strong> +91 9102414771
-        </div>
-    </div>
-
-    <div class="services">
-        <h2 style="color: var(--primary);">हमारी प्रमुख सेवाएँ</h2>
-        <div class="service-grid">
-            <div class="service-item"><i class="fas fa-file-alt"></i><br>सभी ऑनलाइन फॉर्म</div>
-            <div class="service-item"><i class="fas fa-print"></i><br>कलर फोटोकॉपी</div>
-            <div class="service-item"><i class="fas fa-address-card"></i><br>पैन & आधार</div>
-            <div class="service-item"><i class="fas fa-university"></i><br>बैंकिंग सेवाएँ</div>
-            <div class="service-item"><i class="fas fa-graduation-cap"></i><br>रिजल्ट/एडमिट कार्ड</div>
-            <div class="service-item"><i class="fas fa-camera"></i><br>पासपोर्ट फोटो</div>
-        </div>
-    </div>
-
-    <div class="contact-box">
-        <h3><i class="fab fa-whatsapp"></i> ऑनलाइन काम बुक करें</h3>
-        <div class="form-group">
-            <label>आपका नाम:</label>
-            <input type="text" id="custName" placeholder="अपना नाम लिखें...">
-        </div>
-        <div class="form-group">
-            <label>काम का विवरण:</label>
-            <textarea id="custWork" rows="3" placeholder="कौन सा काम करवाना है?"></textarea>
-        </div>
-        <button class="btn-send" onclick="sendToWhatsApp()">
-            व्हाट्सएप पर जानकारी भेजें
+    <div class="booking-section">
+        <h3>📝 ऑनलाइन काम बुक करें</h3>
+        <input type="text" id="custName" placeholder="अपना नाम यहाँ लिखें...">
+        <textarea id="custWork" rows="2" placeholder="क्या काम करवाना है? (जैसे: पैन कार्ड बनवाना है)"></textarea>
+        <button class="ws-btn" onclick="sendToWhatsApp()">
+            <i class="fab fa-whatsapp"></i> व्हाट्सएप पर जानकारी भेजें
         </button>
+    </div>
+
+    <h2 style="margin-top: 40px;">हमारी प्रमुख सेवाएँ</h2>
+    <div class="service-grid">
+        <div class="service-item" onclick="quickBook('पैन कार्ड')">
+            <i class="fas fa-id-card"></i>
+            <h4>पैन कार्ड</h4>
+        </div>
+        <div class="service-item" onclick="quickBook('आधार सुधार')">
+            <i class="fas fa-fingerprint"></i>
+            <h4>आधार सुधार</h4>
+        </div>
+        <div class="service-item" onclick="quickBook('पैसा निकासी')">
+            <i class="fas fa-university"></i>
+            <h4>पैसा निकासी</h4>
+        </div>
+        <div class="service-item" onclick="quickBook('ऑनलाइन फॉर्म')">
+            <i class="fas fa-file-invoice"></i>
+            <h4>ऑनलाइन फॉर्म</h4>
+        </div>
     </div>
 </div>
 
 <footer>
-    <p>&copy; 2026 RK CYBER CAFE | रवि कुमार द्वारा विकसित</p>
-    <p>जाखी बीघा, मणिनगर, डेहरी ऑन सोन</p>
+    <p>&copy; 2026 RK CYBER CAFE | रवि कुमार</p>
 </footer>
 
 <script>
+    // यह फंक्शन व्हाट्सएप बटन को चालू करेगा
     function sendToWhatsApp() {
-        let name = document.getElementById('custName').value;
-        let work = document.getElementById('custWork').value;
-        let phone = "919102414771";
+        var name = document.getElementById('custName').value;
+        var work = document.getElementById('custWork').value;
+        var phone = "919102414771"; // आपका नंबर
 
-        if(name == "" || work == "") {
-            alert("कृपया नाम और काम भरें!");
+        if (name == "" || work == "") {
+            alert("कृपया नाम और काम का विवरण भरें!");
             return;
         }
 
-        let message = नमस्ते रवि जी,\nमेरा नाम: *${name}*\nकाम का विवरण: *${work}*;
-        let url = https://wa.me/${phone}?text=${encodeURIComponent(message)};
+        var message = "नमस्ते रवि जी,\nमेरा नाम: " + name + "\nमुझे यह काम करवाना है: " + work + "";
+        var url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
         
-        alert("रवि कुमार जी की वेबसाइट पर आने के लिए धन्यवाद!");
-        window.open(url, '_blank').focus();
+        window.open(url, '_blank');
+    }
+
+    // नीचे के आइकॉन के लिए फंक्शन
+    function quickBook(service) {
+        var name = document.getElementById('custName').value;
+        if (name == "") {
+            alert("कृपया पहले अपना नाम ऊपर लिखें!");
+            document.getElementById('custName').focus();
+            return;
+        }
+        document.getElementById('custWork').value = service;
+        sendToWhatsApp();
     }
 </script>
 
