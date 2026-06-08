@@ -1,12 +1,204 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CreatorHub Studio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <title>CreatorHub Studio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f1117;
+      color: white;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 240px;
+      background: #171a23;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      color: #ff0033;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 14px;
+      margin: 8px 0;
+      border-radius: 10px;
+      background: #222735;
+    }
+
+    .sidebar a:hover {
+      background: #ff0033;
+    }
+
+    .main {
+      flex: 1;
+      padding: 30px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .topbar h1 {
+      margin: 0;
+    }
+
+    .btn {
+      background: #ff0033;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #171a23;
+      padding: 22px;
+      border-radius: 18px;
+      border: 1px solid #2d3344;
+    }
+
+    .card p {
+      color: #aaa;
+    }
+
+    .videos {
+      margin-top: 30px;
+      background: #171a23;
+      padding: 20px;
+      border-radius: 18px;
+    }
+
+    .video {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+      border-bottom: 1px solid #333;
+    }
+
+    .video img {
+      width: 150px;
+      height: 85px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .video h3 {
+      margin: 0;
+    }
+
+    .video p {
+      color: #aaa;
+      margin: 6px 0;
+    }
+
+    @media(max-width: 800px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: auto;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .video {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="sidebar">
+      <h2>CreatorHub</h2>
+      <a href="#">Dashboard</a>
+      <a href="#">Videos</a>
+      <a href="#">Analytics</a>
+      <a href="#">AI Tools</a>
+      <a href="#">Earnings</a>
+      <a href="#">Settings</a>
+    </div>
+
+    <div class="main">
+
+      <div class="topbar">
+        <h1>Creator Studio Dashboard</h1>
+        <button class="btn">Upload Video</button>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <p>Subscribers</p>
+          <h2>12,850</h2>
+        </div>
+
+        <div class="card">
+          <p>Total Views</p>
+          <h2>58,420</h2>
+        </div>
+
+        <div class="card">
+          <p>Watch Time</p>
+          <h2>3.8K hrs</h2>
+        </div>
+
+        <div class="card">
+          <p>Earnings</p>
+          <h2>$620</h2>
+        </div>
+      </div>
+
+      <div class="videos">
+        <h2>Recent Videos</h2>
+
+        <div class="video">
+          <img src="https://picsum.photos/300/180?random=1">
+          <div>
+            <h3>How to Grow on YouTube</h3>
+            <p>15,420 views · Published</p>
+          </div>
+        </div>
+
+        <div class="video">
+          <img src="https://picsum.photos/300/180?random=2">
+          <div>
+            <h3>Best Editing Apps</h3>
+            <p>2,340 views · Draft</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</body>
 </html>
